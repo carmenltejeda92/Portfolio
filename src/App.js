@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react'
 import './App.css';
+import Baseball from './components/Baseball';
 
 function App() {
+  const [team, setTeam] = useState(null)
+  const url = `https://api-baseball.p.rapidapi.com/teams?league=1&season=2020`;
+  const options = {
+      method: 'GET',
+      headers: {
+          'X-RapidAPI-Key': 'c40b5da817msh2cfaf67c5455c12p169da5jsn1937ff11578e',
+          'X-RapidAPI-Host': 'api-baseball.p.rapidapi.com'
+      }
+  };
+
+  const getTeam = async() =>{
+    try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+useEffect(() =>{
+  getTeam()
+}, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Baseball teamSearch={getTeam} />
     </div>
   );
 }
