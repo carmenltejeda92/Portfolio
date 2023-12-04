@@ -17,19 +17,20 @@ function App() {
     try {
         const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
-    } catch (error) {
+        setTeam(result);
+        console.log(result)
+      } catch (error) {
         console.error(error);
     }
 }
 
-useEffect(() =>{
-  getTeam()
-}, [])
+// useEffect(() =>{
+//   getTeam()
+// }, [])
 
   return (
     <div className="App">
-      <Baseball teamSearch={getTeam} />
+      {team?<Baseball teamSearch={team} />: null}
     </div>
   );
 }

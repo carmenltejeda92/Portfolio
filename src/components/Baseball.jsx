@@ -24,7 +24,7 @@ function Baseball(props) {
         </div>
         <div className='bottomDiv'>
             <form onSubmit={handleSubmit}>
-                <input className='search' name='searchTerm' type='text' placeholder='Search Your Team'
+                <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
                     onChange={handleChange} value={FormData.searchTeam}></input>
             </form>
             <div className='movieInfo'>
