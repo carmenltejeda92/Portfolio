@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import Fun from '../components/Fun'
 
 function Baseball(props) {
     const [formData, setFormData] = useState()
@@ -19,17 +20,14 @@ function Baseball(props) {
   return (
     <div className='form'>
         <div className='topDiv'>
-            <div className='movieImg'><img></img>
-            </div>
+            <div className='movieImg'><img></img></div>
         </div>
         <div className='bottomDiv'>
             <form onSubmit={handleSubmit}>
                 <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
                     onChange={handleChange} value={FormData.searchTeam}></input>
             </form>
-            <div className='movieInfo'>
-                {/* <Display /> */}
-            </div>
+            <div className='movieInfo'></div>
         </div>
     </div>
   )

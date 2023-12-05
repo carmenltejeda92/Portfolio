@@ -1,4 +1,6 @@
 import React from 'react'
+import Baseball from '../pages/Baseball';
+import { useState, useEffect } from 'react';
 
 function Fun() {
     const [team, setTeam] = useState(null)
@@ -30,6 +32,8 @@ function Fun() {
 
   return (
     <div>
+        <Baseball teamSearch={getTeam} />
+        {/* {team?<Display info={team}/>: null} */}
     </div>
   )
 }

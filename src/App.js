@@ -13,8 +13,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/baseball" element={<Baseball />} />
         <Route path="/about-me" element={<About />} />
-        {/* <Baseball teamSearch={getTeam} />
-        {team?<Display info={team}/>: null} */}
       </Routes>
 
     </div>
