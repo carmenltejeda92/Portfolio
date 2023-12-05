@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import Display from './Display'
 
 function Baseball(props) {
     const [formData, setFormData] = useState()
