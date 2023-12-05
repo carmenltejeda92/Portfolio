@@ -34,7 +34,7 @@ function App() {
   return (
     <Routes>
       <div className="App">
-        <Route path="" element={<Home />} />
+        <Route path="/" element={<Display />} />
         {/* <Baseball teamSearch={getTeam} />
         {team?<Display info={team}/>: null} */}
       </div>
