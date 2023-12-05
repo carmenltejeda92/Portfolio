@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import Display from './Display'
 
 function Baseball(props) {
     const [formData, setFormData] = useState()
@@ -28,7 +29,7 @@ function Baseball(props) {
                     onChange={handleChange} value={FormData.searchTeam}></input>
             </form>
             <div className='movieInfo'>
-                <p></p>
+                <Display />
             </div>
         </div>
     </div>

@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import './App.css';
 import Baseball from './components/Baseball';
+import Display from './components/Display';
+import Home from './components/Home';
 
 function App() {
   const [team, setTeam] = useState(null)
@@ -30,7 +32,9 @@ function App() {
 
   return (
     <div className="App">
-      {team?<Baseball teamSearch={team} />: null}
+      <Home />
+      {/* <Baseball teamSearch={getTeam} />
+      {team?<Display info={team}/>: null} */}
     </div>
   );
 }
