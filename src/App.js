@@ -32,11 +32,13 @@ function App() {
 // }, [])
 
   return (
-    <div className="App">
-      <Home />
-      {/* <Baseball teamSearch={getTeam} />
-      {team?<Display info={team}/>: null} */}
-    </div>
+    <Routes>
+      <div className="App">
+        <Route path="" element={<Home />} />
+        {/* <Baseball teamSearch={getTeam} />
+        {team?<Display info={team}/>: null} */}
+      </div>
+    </Routes>
   );
 }
 
