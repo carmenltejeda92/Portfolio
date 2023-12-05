@@ -27,7 +27,7 @@ function App() {
     }
 }
 
-// useEffect(() =>{
+// useEffect((()) =>{
 //   getTeam()
 // }, [])
 
