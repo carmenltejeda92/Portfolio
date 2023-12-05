@@ -36,6 +36,7 @@ useEffect(() =>{
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/display" element={<Display />} />
+        <Route path="/baseball" element={<Baseball />} />
         {/* <Baseball teamSearch={getTeam} />
         {team?<Display info={team}/>: null} */}
       </Routes>

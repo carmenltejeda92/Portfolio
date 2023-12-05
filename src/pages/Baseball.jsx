@@ -29,7 +29,7 @@ function Baseball(props) {
                     onChange={handleChange} value={FormData.searchTeam}></input>
             </form>
             <div className='movieInfo'>
-                <Display />
+                {/* <Display /> */}
             </div>
         </div>
     </div>
