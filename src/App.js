@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import './App.css';
-import Baseball from './components/Baseball';
-import Display from './components/Display';
-import Home from './components/Home';
+import Baseball from './pages/Baseball';
+import Display from './pages/Display';
+import Home from './pages/Home';
 import { Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -32,13 +32,14 @@ function App() {
 // }, [])
 
   return (
-    <Routes>
-      <div className="App">
+    <div className="App">
+      <Routes>
         <Route path="/" element={<Display />} />
         {/* <Baseball teamSearch={getTeam} />
         {team?<Display info={team}/>: null} */}
-      </div>
-    </Routes>
+      </Routes>
+
+    </div>
   );
 }
 
