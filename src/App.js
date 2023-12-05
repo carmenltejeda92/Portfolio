@@ -3,7 +3,7 @@ import './App.css';
 import Baseball from './components/Baseball';
 import Display from './components/Display';
 import Home from './components/Home';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 
 function App() {
   const [team, setTeam] = useState(null)
@@ -27,18 +27,16 @@ function App() {
     }
 }
 
-// useEffect((()) =>{
+// useEffect(() =>{
 //   getTeam()
 // }, [])
 
   return (
-    <Router>
-      <div className="App">
-        <Home />
-        {/* <Baseball teamSearch={getTeam} />
-        {team?<Display info={team}/>: null} */}
-      </div>
-    </Router>
+    <div className="App">
+      <Home />
+      {/* <Baseball teamSearch={getTeam} />
+      {team?<Display info={team}/>: null} */}
+    </div>
   );
 }
 

@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Home() {
-    
+    // document.addEventListener("keydown", this.keydown)
+    // document.addEventListener("keyup", this.keyup)
 
 
   return (
