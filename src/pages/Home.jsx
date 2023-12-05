@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
 
+    const nav = useNavigate()
 
   return (
     <div>
@@ -39,7 +41,12 @@ function Home() {
                         
                     </div>
                 </div>
-            </div>
+        </div>
+        <div className='buttons'>
+            <button className='btn' onClick={()=>nav('about-me')}>About Me</button>
+            <button className='btn'>Fun Fact</button>
+        </div>
+
     </div>
   )
 }

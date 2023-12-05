@@ -3,6 +3,7 @@ import './App.css';
 import Baseball from './pages/Baseball';
 import Display from './pages/Display';
 import Home from './pages/Home';
+import About from './pages/About';
 import { Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
         const result = await response.json();
         setTeam(result);
         console.log(result)
-      } catch (error) {
+    } catch (error) {
         console.error(error);
     }
 }
@@ -37,6 +38,7 @@ useEffect(() =>{
         <Route path="/" element={<Home />} />
         <Route path="/display" element={<Display />} />
         <Route path="/baseball" element={<Baseball />} />
+        <Route path="/about-me" element={<About />} />
         {/* <Baseball teamSearch={getTeam} />
         {team?<Display info={team}/>: null} */}
       </Routes>
