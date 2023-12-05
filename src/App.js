@@ -27,14 +27,15 @@ function App() {
     }
 }
 
-// useEffect(() =>{
-//   getTeam()
-// }, [])
+useEffect(() =>{
+  getTeam()
+}, [])
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/display" element={<Display />} />
         {/* <Baseball teamSearch={getTeam} />
         {team?<Display info={team}/>: null} */}
       </Routes>
