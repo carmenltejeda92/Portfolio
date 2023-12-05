@@ -44,7 +44,7 @@ function Home() {
         </div>
         <div className='buttons'>
             <button className='btn' onClick={()=>nav('about-me')}>About Me</button>
-            <button className='btn'>Fun Fact</button>
+            <button className='btn' onClick={()=>nav('baseball')}>Fun Fact</button>
         </div>
 
     </div>
