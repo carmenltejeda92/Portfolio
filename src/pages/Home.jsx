@@ -8,13 +8,18 @@ function Home() {
 
     const nav = useNavigate()
 
-    let rando = Math.random()
+    function randomNum(){
+        let rando = Math.random().toFixed(2)
+        return rando
+    }
 
     function shootThem(){
         let humanShips = 4
-        console.log(Ships[0].name)
-        if(rando == Ships[0].accuracy){
-            
+        if(randomNum() > Ships[0].accuracy){
+            Ships[1].hull -= 5
+            console.log(Ships[1].hull)
+        }else{
+            console.log('Humans missed')
         }
     }
 
