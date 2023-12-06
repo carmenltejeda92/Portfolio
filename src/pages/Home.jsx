@@ -1,25 +1,51 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import {useState} from 'react'
 import Ships from '../models/Ships'
 
 function Home() {
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
-
     const nav = useNavigate()
+    const [ships, setShip] = useState(Ships)
 
     function randomNum(){
         let rando = Math.random().toFixed(2)
         return rando
     }
 
+    const alienStats = document.querySelector('.alienStats')
+
     function shootThem(){
+        let pOneTurn = true
+
         let humanShips = 4
-        if(randomNum() > Ships[0].accuracy){
-            Ships[1].hull -= 5
-            console.log(Ships[1].hull)
-        }else{
-            console.log('Humans missed')
+        let alienShips = 4
+        if(pOneTurn){
+            if(randomNum() > Ships[0].accuracy){
+                Ships[1].hull -= 5
+                alienStats.innerHTML = Ships[1].hull
+                console.log(Ships[1].hull)
+                if(Ships[1].hull === 0){
+                    alienShips -= 1
+                    console.log(alienShips)
+                    Ships[1].hull = 15
+                    // const alienOne = document.getElementById('#alienOne')
+                    // alienOne.remove()
+                    if(alienShips === 0){
+                        console.log('All ships destroyed')
+                    }
+                }
+            }else if(randomNum() === Ships[0].accuracy){
+                console.log('Direct Hit!')
+                alienShips --
+            }
+        }
+
+        if(!pOneTurn){
+            if(randomNum() > Ships[1].accuracy){
+
+            }
         }
     }
 
@@ -36,7 +62,7 @@ function Home() {
         <div className="board">
                 <div className="leftSide">
                     <div className="them">
-                        <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" 
+                        <div id="alienOne" className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" 
                             height='100px' width='100px'/></div>  
                         <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" 
                             height='100px' width='100px'/></div>
@@ -46,7 +72,6 @@ function Home() {
                             height='100px' width='100px'/></div>   
                     </div>
                     <div className="alienStats">
-                        
                     </div>
                 </div>
                 <button className="shoot" onClick={()=>shootThem()}>Shoot</button>
