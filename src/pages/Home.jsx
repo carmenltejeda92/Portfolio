@@ -1,11 +1,26 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import Ships from '../models/Ships'
 
 function Home() {
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
 
     const nav = useNavigate()
+
+    let rando = Math.random()
+
+    function shootThem(){
+        let humanShips = 4
+        console.log(Ships[0].name)
+        if(rando == Ships[0].accuracy){
+            
+        }
+    }
+
+
+
+
 
   return (
     <div>
@@ -29,7 +44,7 @@ function Home() {
                         
                     </div>
                 </div>
-                <button className="shoot">Shoot</button>
+                <button className="shoot" onClick={()=>shootThem()}>Shoot</button>
                 <div className="rightSide">
                     <div className="us">
                         <img src ="https://media.tenor.com/jG3CfbW1f6oAAAAi/buccaneer-swashbuckler.gif" alt="" className="assembly" />

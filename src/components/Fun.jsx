@@ -33,7 +33,7 @@ function Fun() {
   return (
     <div>
         <Baseball teamSearch={getTeam} />
-        {/* {team?<Display info={team}/>: null} */}
+        {team?<Baseball info={team}/>: null}
     </div>
   )
 }
