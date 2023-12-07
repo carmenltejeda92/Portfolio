@@ -32,8 +32,8 @@ function Fun() {
 
   return (
     <div>
-        <Baseball teamSearch={getTeam} />
-        {team?<Baseball info={team}/>: null}
+        <Baseball teamSearch={team} />
+        {/* {team?<Baseball info={team}/>: null} */}
     </div>
   )
 }

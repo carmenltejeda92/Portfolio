@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useState} from 'react'
+import Popup from 'reactjs-popup'
 import Ships from '../models/Ships'
 
 function Home() {
@@ -14,7 +15,6 @@ function Home() {
         return rando
     }
 
-    const alienStats = document.querySelector('.alienStats')
 
     function shootThem(){
         let pOneTurn = true
@@ -24,7 +24,6 @@ function Home() {
         if(pOneTurn){
             if(randomNum() > Ships[0].accuracy){
                 Ships[1].hull -= 5
-                alienStats.innerHTML = Ships[1].hull
                 console.log(Ships[1].hull)
                 if(Ships[1].hull === 0){
                     alienShips -= 1
@@ -74,7 +73,7 @@ function Home() {
                     <div className="alienStats">
                     </div>
                 </div>
-                <button className="shoot" onClick={()=>shootThem()}>Shoot</button>
+                    <button className="shoot" onClick={()=>shootThem()}>Shoot</button>
                 <div className="rightSide">
                     <div className="us">
                         <img src ="https://media.tenor.com/jG3CfbW1f6oAAAAi/buccaneer-swashbuckler.gif" alt="" className="assembly" />

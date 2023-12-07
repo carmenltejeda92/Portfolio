@@ -4,16 +4,17 @@ import Fun from '../components/Fun'
 
 function Baseball(props) {
     const [formData, setFormData] = useState()
-    
+    console.log(props.teamSearch)
    
     const handleChange = (e) =>{
-        setFormData({...formData, [e.target.name]: e.target.value})
+        // setFormData({...formData, [e.target.name]: e.target.value})
+        setFormData(e.target.value)
     }
 
     const handleSubmit = (e) =>{
         console.log('Searching ...')
         e.preventDefault()
-        props.teamSearch(formData.searchTeam)
+        // props.teamSearch(formData.searchTeam)
     }
 
 
@@ -22,6 +23,7 @@ function Baseball(props) {
         <div className='topDiv'>
             <div className='movieImg'><img></img></div>
         </div>
+        {/* <Fun /> */}
         <div className='bottomDiv'>
             <form onSubmit={handleSubmit}>
                 <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
