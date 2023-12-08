@@ -5,8 +5,8 @@ import Fun from '../components/Fun'
 
 function Baseball(props) {
     const nav = useNavigate()
-    const [formData, setFormData] = useState()
-    console.log(props.teamSearch)
+    const [formData, setFormData] = useState({searchterm: ""})
+    // console.log(props.teamSearch)
    
     const handleChange = (e) =>{
         // setFormData({...formData, [e.target.name]: e.target.value})
@@ -16,27 +16,40 @@ function Baseball(props) {
     const handleSubmit = (e) =>{
         console.log('Searching ...')
         e.preventDefault()
-        console.log(formData.searchTeam)
+        // console.log(formData.searchTeam)
     }
 
 
   return (
+
     <div className='form'>
         <div className='topDiv'>
-            <div className='movieImg'><img></img></div>
-        </div>
-        <Fun />
-        <div className='bottomDiv'>
+            <div className='result'></div>
             <form onSubmit={handleSubmit}>
-                <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
-                    onChange={handleChange} value={formData.searchTeam}></input>
+            <input className='search' name="searchterm" type="text" placeholder="Search Song"
+              onChange={handleChange} value={formData.searchterm}></input>
+            <div><input id="btn" type="submit" value="Submit"/></div>
             </form>
-            <div className='movieInfo'></div>
         </div>
-        <div className='bTN'>
         <button className='btn' onClick={()=>nav('/')}>Home</button>
-      </div>
     </div>
+
+    // <div className='form'>
+    //     <div className='topDiv'>
+    //         <div className='movieImg'><img></img></div>
+    //     </div>
+    //     <Fun inputValue={formData}/> 
+    //     <div className='bottomDiv'>
+    //         <form onSubmit={handleSubmit}>
+    //             <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
+    //                 onChange={handleChange} value={formData}></input>
+    //         </form>
+    //         <div className='movieInfo'></div>
+    //     </div>
+    //     <div className='bTN'>
+        // <button className='btn' onClick={()=>nav('/')}>Home</button>
+    //   </div>
+    // </div>
   )
 }
 
