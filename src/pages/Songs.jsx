@@ -14,7 +14,7 @@ function Songs(props) {
     const handleSubmit = (e) =>{
         console.log('Searching...')
         e.preventDefault()
-        props.songSearch(formData.searchterm)
+        props.handleSong(formData.searchterm)
     }
 
 
@@ -26,7 +26,7 @@ function Songs(props) {
             <form onSubmit={handleSubmit}>
             <input className='search' name="searchterm" type="text" placeholder="Search Song"
               onChange={handleChange} value={formData.searchterm}></input>
-            <div><input id="btn" type="submit" value="Submit"/></div>
+            <div><input id="btn" type="submit" value="submit"/></div>
             </form>
         </div>
         <button className='btn' onClick={()=>nav('/')}>Home</button>
