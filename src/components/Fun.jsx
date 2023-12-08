@@ -3,16 +3,16 @@ import Baseball from '../pages/Baseball';
 import { useState, useEffect } from 'react';
 
 function Fun() {
-    const [team, setTeam] = useState(null)
-    const url = 'https://tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com/getMLBTeams?teamStats=true&topPerformers=true';
+  const [team, setTeam] = useState(null)
+    
+  const getTeam = async(searchTeam) =>{
+    const url = `https://tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com/${searchTeam}teamStats=true&topPerformers=true`;
     const options = {
     method: 'GET',
     headers: {
       'X-RapidAPI-Key': '8585c97282msh92d53c3affc0d28p190d69jsn6848a6977c6c',
       'X-RapidAPI-Host': 'tank01-mlb-live-in-game-real-time-statistics.p.rapidapi.com'
-    }
-  }
-  const getTeam = async() =>{
+    }}
       try {
         const response = await fetch(url, options);
         const result = await response.json();

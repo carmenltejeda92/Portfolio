@@ -16,7 +16,7 @@ function Baseball(props) {
     const handleSubmit = (e) =>{
         console.log('Searching ...')
         e.preventDefault()
-        // props.teamSearch(formData.searchTeam)
+        console.log(formData.searchTeam)
     }
 
 
@@ -25,11 +25,11 @@ function Baseball(props) {
         <div className='topDiv'>
             <div className='movieImg'><img></img></div>
         </div>
-        <Fun />
+        {/* <Fun /> */}
         <div className='bottomDiv'>
             <form onSubmit={handleSubmit}>
                 <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
-                    onChange={handleChange} value={FormData.searchTeam}></input>
+                    onChange={handleChange} value={formData.searchTeam}></input>
             </form>
             <div className='movieInfo'></div>
         </div>
