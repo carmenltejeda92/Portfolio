@@ -9,24 +9,25 @@ function Home() {
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
     const nav = useNavigate()
-    const [ships, setShip] = useState(Ships)
+    const [ships, setShip] = useState(4)
 
 
     let pOneTurn = true
-    let humanShips = 4
-    let alienShips = 4
+    
 
     function shootThem(){
         const alienHull = document.querySelector('.lblAlienHull')
         const humanHull = document.querySelector('.lblHumanHull')
         let rando = Math.random().toFixed(2)
+        let humanShips = ships
+        let alienShips = ships
 
 
         if(pOneTurn == true){
             pOneTurn = false
             if(rando > Ships[0].accuracy){
                 if(Ships[1].hull === 0){
-                    alienShips--
+                    setShip(alienShips--)
                     alienHull.textContent = ('One of our ships were destroyed! We have ' + alienShips + ' ships left!')
                     humanHull.textContent = 'We hit them!'
                     Ships[1].hull = 15
@@ -34,10 +35,10 @@ function Home() {
                     Ships[1].hull -= 5
                     alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
                     humanHull.textContent = 'We hit them!'
-                    alienShips--
+                    setShip(alienShips--)
                 }
             }else if(rando === Ships[0].accuracy){
-                alienShips--
+                setShip(alienShips--)
                 humanHull.textContent = 'Direct Hit!'
                 alienHull.textContent = ('One of our ships have been destroyed! ' + alienShips + ' left!')
             }else if(rando < Ships[0].accuracy){
@@ -50,7 +51,7 @@ function Home() {
             pOneTurn = true
             if(rando > Ships[1].accuracy){
                 if(Ships[0].hull === 0){
-                    humanShips --
+                    setShip(humanShips--)
                     humanHull.textContent = ('One of our ships were destroyed! We have ' + humanShips + ' ships left!')
                     alienHull.textContent = 'We hit them!'
                     Ships[0].hull = 20
@@ -58,11 +59,11 @@ function Home() {
                     Ships[0].hull -= 5
                     humanHull.textContent = ('We were hit! Our ships health is now: ' + Ships[0].hull)
                     alienHull.textContent = 'We hit them!'
-                    humanShips --
+                    setShip(humanShips--)
                 }
             }else if(rando === Ships[1].accuracy){
                 alienHull.textContent = 'Direct Hit!'
-                humanShips --
+                setShip(humanShips--)
             }else if(rando < Ships[1].accuracy){
                 alienHull.textContent = 'Oh no, we missed! Humans turn!'
                 humanHull.textContent = 'Our turn! Yay!'
