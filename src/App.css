@@ -37,12 +37,30 @@ body{
   width: 100px;
 }
 
+.leftSide{
+  display: flex;
+}
+
+.rightSide{
+  display: flex;
+}
+
 .them{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   width: 100px;
+}
+
+.lblAlienHull{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 300px;
+  margin-left: 50px;
+  font-size: 30pt;
 }
 
 .us{
@@ -52,6 +70,16 @@ body{
   flex-direction: column;
   justify-content: space-between;
   margin-left: 45px;
+}
+
+.lblHumanHull{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 300px;
+  font-size: 30pt;
+  margin-right: 45px;
 }
 
 #shoot{
