@@ -4,66 +4,70 @@ import {useState} from 'react'
 import Ships from '../models/Ships'
 
 
+
 function Home() {
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
     const nav = useNavigate()
     const [ships, setShip] = useState(Ships)
 
-    function randomNum(){
-        let rando = Math.random().toFixed(2)
-        return rando
-    }
 
+    let pOneTurn = true
+    let humanShips = 4
+    let alienShips = 4
 
     function shootThem(){
-        let pOneTurn = true
         const alienHull = document.querySelector('.lblAlienHull')
         const humanHull = document.querySelector('.lblHumanHull')
+        let rando = Math.random().toFixed(2)
 
-        let humanShips = 4
-        let alienShips = 4
-        if(pOneTurn){
-            if(randomNum() > Ships[0].accuracy){
+
+        if(pOneTurn == true){
+            pOneTurn = false
+            if(rando > Ships[0].accuracy){
                 if(Ships[1].hull === 0){
-                    alienShips --
+                    alienShips--
                     alienHull.textContent = ('One of our ships were destroyed! We have ' + alienShips + ' ships left!')
+                    humanHull.textContent = 'We hit them!'
                     Ships[1].hull = 15
+                }else{
+                    Ships[1].hull -= 5
+                    alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
+                    humanHull.textContent = 'We hit them!'
+                    alienShips--
                 }
-                Ships[1].hull -= 5
-                alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
-                humanHull.textContent = 'We hit them!'
-            }else if(randomNum() === Ships[0].accuracy){
-                alienHull.textContent = 'Direct Hit!'
-                alienShips --
-            }else if(randomNum() < Ships[0].accuracy){
+            }else if(rando === Ships[0].accuracy){
+                alienShips--
+                humanHull.textContent = 'Direct Hit!'
+                alienHull.textContent = ('One of our ships have been destroyed! ' + alienShips + ' left!')
+            }else if(rando < Ships[0].accuracy){
                 humanHull.textContent = 'Oh no, we missed! Aliens turn!'
-                alienHull.textContent = ''
+                alienHull.textContent = 'Our turn! Yay!'
             }
 
-            pOneTurn = false
             if(alienShips === 0) humanHull.textContent ='All alien ships destroyed!! Earth wins!!'
-        }
-
-        if(!pOneTurn){
-            if(randomNum() > Ships[1].accuracy){
+        } else if(pOneTurn == false){
+            pOneTurn = true
+            if(rando > Ships[1].accuracy){
                 if(Ships[0].hull === 0){
                     humanShips --
                     humanHull.textContent = ('One of our ships were destroyed! We have ' + humanShips + ' ships left!')
+                    alienHull.textContent = 'We hit them!'
                     Ships[0].hull = 20
+                }else{
+                    Ships[0].hull -= 5
+                    humanHull.textContent = ('We were hit! Our ships health is now: ' + Ships[0].hull)
+                    alienHull.textContent = 'We hit them!'
+                    humanShips --
                 }
-                Ships[0].hull -= 5
-                humanHull.textContent = ('We were hit! Our ships health is now: ' + Ships[0].hull)
-                alienHull.textContent = 'We hit them!'
-            }else if(randomNum() === Ships[1].accuracy){
+            }else if(rando === Ships[1].accuracy){
                 alienHull.textContent = 'Direct Hit!'
                 humanShips --
-            }else if(randomNum() < Ships[1].accuracy){
-                alienHull.textContent = 'Oh no, we missed! Aliens turn!'
-                humanHull.textContent = ''
+            }else if(rando < Ships[1].accuracy){
+                alienHull.textContent = 'Oh no, we missed! Humans turn!'
+                humanHull.textContent = 'Our turn! Yay!'
             }
 
-            pOneTurn = true
             if(humanShips === 0) alienHull.textContent ='We defeated the humans! Invade!!'
 
         }
