@@ -1,8 +1,10 @@
 import React from 'react'
 import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import Fun from '../components/Fun'
 
 function Baseball(props) {
+    const nav = useNavigate()
     const [formData, setFormData] = useState()
     console.log(props.teamSearch)
    
@@ -31,6 +33,9 @@ function Baseball(props) {
             </form>
             <div className='movieInfo'></div>
         </div>
+        <div className='bTN'>
+        <button className='btn' onClick={()=>nav('/')}>Home</button>
+      </div>
     </div>
   )
 }
