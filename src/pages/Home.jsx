@@ -1,10 +1,12 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import {useState} from 'react'
-import Popup from 'reactjs-popup'
 import Ships from '../models/Ships'
 
 function Home() {
+    const [popUP, setPopUP] = useState(false)
+    const whileUP = popUP ? "while-UP" : ""
+
     // document.addEventListener("keydown", this.keydown)
     // document.addEventListener("keyup", this.keyup)
     const nav = useNavigate()
@@ -53,14 +55,14 @@ function Home() {
 
 
   return (
-    <div>
+    <div className={'game' + whileUP}>
         <div className='text'>
             <h1>Alien Attack!!!</h1>
             <p>Destroy the aliens to access my page, but be careful, they shoot back!</p>
         </div>
         <div className="board">
                 <div className="leftSide">
-                    <div className="them">
+                    <div className={"them" + whileUP}>
                         <div id="alienOne" className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" 
                             height='100px' width='100px'/></div>  
                         <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" 
@@ -73,7 +75,7 @@ function Home() {
                     <div className="alienStats">
                     </div>
                 </div>
-                    <button className="shoot" onClick={()=>shootThem()}>Shoot</button>
+                    <button id="shoot" className={whileUP} onClick={()=>shootThem() && setPopUP(true)}>Shoot</button>
                 <div className="rightSide">
                     <div className="us">
                         <img src ="https://media.tenor.com/jG3CfbW1f6oAAAAi/buccaneer-swashbuckler.gif" alt="" className="assembly" />
@@ -90,7 +92,9 @@ function Home() {
             <button className='btn' onClick={()=>nav('about-me')}>About Me</button>
             <button className='btn' onClick={()=>nav('baseball')}>Fun Fact</button>
         </div>
-
+        <div>
+            {popUP && <popUP setPopUP={setPopUP}/>}
+        </div>
     </div>
   )
 }

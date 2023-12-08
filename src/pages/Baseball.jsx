@@ -23,7 +23,7 @@ function Baseball(props) {
         <div className='topDiv'>
             <div className='movieImg'><img></img></div>
         </div>
-        {/* <Fun /> */}
+        <Fun />
         <div className='bottomDiv'>
             <form onSubmit={handleSubmit}>
                 <input className='search' name='searchTerm' type='text' placeholder='Search Your Team & Press Enter'
