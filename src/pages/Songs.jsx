@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import Fun from '../components/Fun'
 
-function Baseball(props) {
+function Songs(props) {
     const nav = useNavigate()
     const[formData, setFormData] = useState({searchterm: ""})
 
@@ -34,4 +34,4 @@ function Baseball(props) {
   )
 }
 
-export default Baseball
+export default Songs
