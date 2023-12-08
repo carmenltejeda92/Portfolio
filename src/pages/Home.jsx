@@ -19,28 +19,33 @@ function Home() {
     function shootThem(){
         let pOneTurn = true
         const alienHull = document.querySelector('.lblAlienHull')
+        const humanHull = document.querySelector('.lblHumanHull')
 
         let humanShips = 4
         let alienShips = 4
         if(pOneTurn){
             if(randomNum() > Ships[0].accuracy){
-                Ships[1].hull -= 5
-                alienHull.textContent = ('Aliens were hit! Their ships health is now: ' + Ships[1].hull)
                 if(Ships[1].hull === 0){
-                    alienShips -= 1
-                    console.log(alienShips)
+                    alienShips--
+                    alienHull.textContent = ('One of our ships were destroyed! We have ' + alienShips + ' ships left!')
                     Ships[1].hull = 15
-                    // const alienOne = document.getElementById('#alienOne')
-                    // alienOne.remove()
-                    if(alienShips === 0){
-                        console.log('All ships destroyed')
-                    }
                 }
+                Ships[1].hull -= 5
+                alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
+                humanHull.textContent = 'We hit them!'
             }else if(randomNum() === Ships[0].accuracy){
-                console.log('Direct Hit!')
+                alienHull.textContent = 'Direct Hit!'
                 alienShips --
+            }else if(randomNum() < Ships[0].accuracy){
+                humanHull.textContent = 'Oh no, we missed! Aliens turn!'
+                alienHull.textContent = ''
             }
+
+            pOneTurn = false
         }
+
+        if(alienShips === 0) alienHull.textContent ='All ships destroyed'
+
 
         if(!pOneTurn){
             if(randomNum() > Ships[1].accuracy){

@@ -5,6 +5,7 @@ body{
   background-size: cover;
   color: aliceblue;
   justify-content: center;
+  font-family: cursive;
 }
 
 .text{
@@ -55,7 +56,6 @@ body{
 
 .lblAlienHull{
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 100%;
   width: 300px;
@@ -74,7 +74,7 @@ body{
 
 .lblHumanHull{
   display: flex;
-  align-items: center;
+  align-items:end;
   justify-content: center;
   height: 100%;
   width: 300px;
