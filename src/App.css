@@ -131,6 +131,20 @@ body{
   margin-left: -150px;
 }
 
+.aboutMe{
+  display: flex;
+}
+
+.aboutMe a{
+  display: flex;
+
+  text-decoration: none;
+}
+
+.me{
+  border-radius: 25px;
+}
+
 .btn{
   width: 110px;
   height: 45px;
@@ -148,7 +162,9 @@ body{
   0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-
+.bTN{
+  display: flex;
+}
 
 
 
