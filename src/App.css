@@ -22,10 +22,31 @@ body{
 }
 
 .text h1{
-  font-family: cursive;
-  font-size: 50pt;
-  margin-bottom: -20px;
-}
+    font-size: 60px;
+    padding: 0 10px;
+    text-transform: uppercase;
+    color: #fff;
+    animation: zoomup 2s linear infinite;
+    animation-delay: calc(200ms * var(--i));
+  }
+  
+  @keyframes zoomup {
+    0%,
+    100% {
+      color: #846ba9;
+      filter: blur(1px);
+      text-shadow: 0 0 10px #846ba9, 0 0 20px #ffff95, 0 0 30px #846ba9,
+        0 0 40px #846ba9, 0 0 60px #846ba9, 0 0 80px #ffff95, 0 0 100px #846ba9,
+        0 0 120px #ffff95;
+    }
+  
+    5%,
+    95% {
+      filter: blur(0);
+      color: #fff;
+      text-shadow: none;
+    }
+  }
 
 .text p{
   font-family: cursive;

@@ -1,10 +1,13 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, createContext} from 'react'
 import './App.css';
 import Baseball from './pages/Baseball';
 import Home from './pages/Home';
 import About from './pages/About';
 import { Routes, Route} from 'react-router-dom';
 import Songs from './pages/Songs';
+import Display from './components/Display';
+
+export const Context = createContext()
 
 function App() {
   const [song, setSong] = useState(null)
@@ -22,11 +25,9 @@ function App() {
 
     try {
       const response = await fetch(url, options);
-      console.log(response)
       const result = await response.json();
       console.log(result)
       setSong(result);
-      console.log(song)
     } catch (error) {
       console.error(error);
     }
@@ -46,7 +47,8 @@ function App() {
         {/* <Route path="/baseball" element={<Baseball />} /> */}
         <Route path="/about-me" element={<About />} />
       </Routes>
-    {/* <Fun /> */}
+      {/* {song?<Display info={song}/>: null} */}
+
     </div>
   );
 }

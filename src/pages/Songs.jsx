@@ -20,12 +20,11 @@ function Songs(props) {
   return (
 
     <div className='form'>
-        <div className='topDiv'>
+        <div className=''>
             <div className='result'></div>
             <form onSubmit={handleSubmit}>
             <input className='search' name="searchterm" type="text" placeholder="Search Song"
               onChange={handleChange} value={formData.searchterm}></input>
-            <div><input id="btn" type="submit" value="submit"/></div>
             </form>
         </div>
         <button className='btn' onClick={()=>nav('/')}>Home</button>
