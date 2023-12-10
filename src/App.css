@@ -1,4 +1,14 @@
 @media screen and (max-width: 3000px){
+  /* body{
+    display: grid;
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/panorama-milky-way-galaxy-with-stars-and-space-dust-royalty-free-image-1623176828.jpg?crop=0.99995xw:1xh;center,top&resize=1200:*");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    justify-content: center;
+    font-family: cursive;
+  } */
+
   /* .text{
   display: flex;
   flex-direction: column;
@@ -187,17 +197,39 @@
   .game{
     width: 500px;
   }
+
+  body{
+    display: grid;
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/panorama-milky-way-galaxy-with-stars-and-space-dust-royalty-free-image-1623176828.jpg?crop=0.99995xw:1xh;center,top&resize=1200:*");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    justify-content: center;
+    font-family: cursive;
+    height: 681px;
+  }
  
+  .board{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
   .text h1{
-      font-size: 60px;
+      font-size: 30pt;
       padding: 0 10px;
+      margin: 0 auto;
       text-transform: uppercase;
       color: #fff;
-      animation: zoomup 2s linear infinite;
-      animation-delay: calc(200ms * var(--i));
+      animation: header-one 2s linear infinite;
     }
     
-    @keyframes zoomup {
+    @keyframes header-one {
       0%,
       100% {
         color: #846ba9;
@@ -217,13 +249,18 @@
   
   .text p{
     font-family: cursive;
-    font-size: 20pt;
+    font-size: 15pt;
   }
   
   .assembly{
     display: flex;
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
+  }
+
+  .alien{
+    height: 75px;
+    width: 75px;
   }
   
   .leftSide{
@@ -238,16 +275,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
-    width: 100px;
   }
   
   .lblAlienHull{
     display: flex;
     justify-content: center;
-    height: 100%;
     margin-left: 50px;
-    font-size: 30pt;
+    font-size: 15pt;
   }
   
   .us{
@@ -263,14 +297,13 @@
     display: flex;
     align-items:end;
     justify-content: center;
-    height: 100%;
-    font-size: 30pt;
+    font-size: 15pt;
     margin-right: 45px;
   }
   
   #shoot{
-    width: 100px;
-    height: 45px;
+    width: 95px;
+    height: 35px;
     align-self: flex-end;
     background-color: #fff;
     border-radius: 20em;
@@ -314,7 +347,8 @@
   .buttons{
     display: flex;
     flex-direction: column;
-    margin-left: -150px;
+    margin-left: -125px;
+    margin-top: 100px;
   }
   
   .aboutMe{
@@ -332,8 +366,8 @@
   }
   
   .btn{
-    width: 110px;
-    height: 45px;
+    width: 95px;
+    height: 35px;
     margin: 5px;
     background-color: #fff;
     border-radius: 20em;
@@ -355,23 +389,7 @@
 }
 
 
-body{
-  display: grid;
-  background-image: url("https://hips.hearstapps.com/hmg-prod/images/panorama-milky-way-galaxy-with-stars-and-space-dust-royalty-free-image-1623176828.jpg?crop=0.99995xw:1xh;center,top&resize=1200:*");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: aliceblue;
-  justify-content: center;
-  font-family: cursive;
-}
 
-.text{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.board{
-  display: flex;
-  justify-content: space-between;
-}
+
+

@@ -87,14 +87,10 @@ function Home() {
         <div className="board">
                 <div className="leftSide">
                     <div className="them">
-                        <div id="alienOne" className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" 
-                            height='100px' width='100px'/></div>  
-                        <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" 
-                            height='100px' width='100px'/></div>
-                        <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" 
-                            height='100px' width='100px'/></div> 
-                        <div className='alien'><img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" 
-                            height='100px' width='100px'/></div>   
+                        <img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className='alien'/>
+                        <img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" />
+                        <img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" />
+                        <img src ="https://media.tenor.com/Re9FSRZKfN8AAAAi/mom-powerful.gif" alt="" className="alien" /> 
                     </div>
                     <div className="alienStats">
                         <label className='lblAlienHull'></label>
