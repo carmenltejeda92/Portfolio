@@ -16,6 +16,21 @@
   }
 }
 
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+
+
+
+
 @media screen and (max-width: 3000px){
   .game{
     width: 1400px;
@@ -178,6 +193,16 @@
 
   .bTN{
     margin-top: 10%;
+  }
+
+  .summary h1{
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto; 
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite
   }
 
   .summary p{
@@ -386,6 +411,10 @@
   .game{
     width: 100px;
   }
+  
+  .aboutME{
+    width: 481px;
+  }
 
   body{
     display: grid;
@@ -519,11 +548,6 @@
     margin-top: 100px;
   }
 
-
-
-
-
-  
   .aboutMe{
     display: flex;
     flex-direction: column;
@@ -532,13 +556,13 @@
   .aboutMe a{
     display: flex;
     text-decoration: none;
-    margin-top: 115%;
+    margin-top: 105%;
   }
   
   .me{
     position: absolute;
     border-radius: 25px;
-    margin-top: 65%;
+    margin-top: 45%;
     height:450px;
     width:250px;
     margin-left: 20%;
@@ -548,16 +572,22 @@
     margin-top: -5%;
   }
 
+  .summary h1{
+    text-align: center;
+  }
+
   .summary p{
     position: relative;
-    width: 400px;
+    width: 481px;
     text-align: center;
+    margin-top: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    perspective: 400px;
   }
 
 
 
-
-  
   .btn{
     width: 75px;
     height: 25px;
