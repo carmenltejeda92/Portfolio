@@ -14,23 +14,43 @@ function App() {
   // const input = props.inputValue
 
   const getSong = async (searchTerm) =>{
-    const url = `https://shazam.p.rapidapi.com/search?term=${searchTerm}&locale=en-US&offset=0&limit=5`;
+    const url = `https://movie-database-alternative.p.rapidapi.com/?s=${searchTerm}&r=json&page=1`;
     const options = {
       method: 'GET',
       headers: {
         'X-RapidAPI-Key': '8585c97282msh92d53c3affc0d28p190d69jsn6848a6977c6c',
-        'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+        'X-RapidAPI-Host': 'movie-database-alternative.p.rapidapi.com'
       }
     };
-
+    
     try {
       const response = await fetch(url, options);
       const result = await response.json();
-      console.log(result)
-      setSong(result);
+      console.log(result);
+      setSong(result)
     } catch (error) {
       console.error(error);
     }
+   
+   
+   
+    // const url = `https://shazam.p.rapidapi.com/search?term=${searchTerm}&locale=en-US&offset=0&limit=5`;
+    // const options = {
+    //   method: 'GET',
+    //   headers: {
+    //     'X-RapidAPI-Key': '8585c97282msh92d53c3affc0d28p190d69jsn6848a6977c6c',
+    //     'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+    //   }
+    // };
+
+    // try {
+    //   const response = await fetch(url, options);
+    //   const result = await response.json();
+    //   console.log(result)
+    //   setSong(result);
+    // } catch (error) {
+    //   console.error(error);
+    // }
 }
     
   
