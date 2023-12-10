@@ -7,3 +7,5 @@
 <p>Before I could figure out how to display data fetched from the API, I exceeded the monthly quota I was alloted, requiring  me to find another API.</p>
 <h4>Structure of the React app prevented passing of data</h4>
 <p>To resolve this issue, instructor intervention was necessary. Initially, the fetch was coded within App.js, however, in attempts to display data, the component created caught the data and could not pass from there. To resolve this issue, the fetch was put back into App.js, from the component it was placed in. This allowed the returned results to be displayed in console, confirming the API was called.</p>
+<h2>Alien Attack</h2>
+<p>Alien attack is played by pressing the Shoot button at the bottom center of the page. This is the home screen in which the app is loaded to. The game starts with the humans shooting first, then gives the aliens the chance. This goes back and forth until either all the alien ships are destroyed, or all the human ships are destroyed.</p>
