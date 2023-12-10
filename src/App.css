@@ -37,6 +37,16 @@
 }
 
 
+@keyframes bullet{
+  from{
+    transform: translateX(0)
+  }
+
+  to{
+    transform: translateX(100%);
+  }
+}
+
 
 @media screen and (max-width: 3000px){
   .game{
@@ -57,6 +67,7 @@
   .board{
     display: flex;
     justify-content: space-between;
+    animation: bullet 2s 
   }
 
   .text{
@@ -153,8 +164,8 @@
   
   #shoot::before {
     content: "";
-    width: 75px;
-    height: 25px;
+    width: 100px;
+    height: 40px;
     background-color: #fff;
     position: absolute;
     border-radius: inherit;
@@ -180,15 +191,25 @@
   }
 
 
-  
+  .aboutME{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    width: 1000px;
+  }
+
   .aboutMe{
     display: flex;
+    justify-content: center;
   }
   
   .aboutMe a{
+    position: relative;
     display: flex;
     text-decoration: none;
-    margin-top: 30%;
+    margin-top: 45%;
+    margin-left: -60%;
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -198,13 +219,17 @@
   
   .me{
     border-radius: 25px;
-    margin-left: -30%;
     height:450px;
     width:250px;
+    margin-right: 30px;
+    margin-top: 25%;
   }
 
   .bTN{
-    margin-top: 10%;
+    display: flex;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    justify-content: right;
   }
 
   .summary h1{
@@ -213,14 +238,16 @@
     border-right: .15em solid orange; 
     white-space: nowrap; 
     margin: 0 auto; 
+    margin-top: 50px;
     animation: 
       typing 3.5s steps(30, end),
       blink-caret .5s step-end infinite
   }
 
   .summary p{
-    width: 600px;
+    width: 400px;
     text-align: center;
+    margin-top: 10%;
   }
 
 
@@ -440,7 +467,7 @@
     font-family: cursive;
     height: 680px;
   }
- 
+
   .board{
     display: flex;
     justify-content: space-between;
@@ -562,42 +589,49 @@
     margin-top: 100px;
   }
 
+  .aboutME{
+    width: 460px;
+    height: 1000px;
+  }
+
   .aboutMe{
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   
   .aboutMe a{
+    position: absolute;
     display: flex;
     text-decoration: none;
-    margin-top: 105%;
+    margin-left: 22%;
+    margin-top: 100%;
   }
   
   .me{
     position: absolute;
     border-radius: 25px;
-    margin-top: 45%;
     height:450px;
     width:250px;
     margin-left: 20%;
+    margin-top: -25%;
   }
 
   .bTN{
-    margin-top: -5%;
+    display: flex;
+    
   }
 
   .summary h1{
     text-align: center;
+    margin-top: -100%;
   }
 
   .summary p{
     position: relative;
-    width: 481px;
+    width: 400px;
     text-align: center;
-    margin-top: 20%;
-    top: 50%;
-    transform: translateY(-50%);
-    perspective: 400px;
+
   }
 
 
