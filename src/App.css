@@ -1,3 +1,21 @@
+@keyframes header-one {
+  0%,
+  100% {
+    color: #846ba9;
+    filter: blur(1px);
+    text-shadow: 0 0 10px #846ba9, 0 0 20px #ffff95, 0 0 30px #846ba9,
+      0 0 40px #846ba9, 0 0 60px #846ba9, 0 0 80px #ffff95, 0 0 100px #846ba9,
+      0 0 120px #ffff95;
+  }
+
+  5%,
+  95% {
+    filter: blur(0);
+    color: #fff;
+    text-shadow: none;
+  }
+}
+
 @media screen and (max-width: 3000px){
   /* body{
     display: grid;
@@ -29,24 +47,6 @@
     color: #fff;
     animation: zoomup 2s linear infinite;
     animation-delay: calc(200ms * var(--i));
-  }
-  
-  @keyframes zoomup {
-    0%,
-    100% {
-      color: #846ba9;
-      filter: blur(1px);
-      text-shadow: 0 0 10px #846ba9, 0 0 20px #ffff95, 0 0 30px #846ba9,
-        0 0 40px #846ba9, 0 0 60px #846ba9, 0 0 80px #ffff95, 0 0 100px #846ba9,
-        0 0 120px #ffff95;
-    }
-  
-    5%,
-    95% {
-      filter: blur(0);
-      color: #fff;
-      text-shadow: none;
-    }
   }
 
 .text p{
@@ -192,8 +192,7 @@
 
 
 
-@media screen and (max-width: 1200px){}
-@media screen and (max-width: 800px){
+@media screen and (max-width: 1100px){
   .game{
     width: 500px;
   }
@@ -221,56 +220,38 @@
   }
 
   .text h1{
-      font-size: 30pt;
+      font-size: 40pt;
       padding: 0 10px;
       margin: 0 auto;
       text-transform: uppercase;
       color: #fff;
       animation: header-one 2s linear infinite;
     }
-    
-    @keyframes header-one {
-      0%,
-      100% {
-        color: #846ba9;
-        filter: blur(1px);
-        text-shadow: 0 0 10px #846ba9, 0 0 20px #ffff95, 0 0 30px #846ba9,
-          0 0 40px #846ba9, 0 0 60px #846ba9, 0 0 80px #ffff95, 0 0 100px #846ba9,
-          0 0 120px #ffff95;
-      }
-    
-      5%,
-      95% {
-        filter: blur(0);
-        color: #fff;
-        text-shadow: none;
-      }
-    }
   
   .text p{
     font-family: cursive;
-    font-size: 15pt;
+    font-size: 16pt;
   }
   
   .assembly{
     display: flex;
-    height: 75px;
-    width: 75px;
+    height: 95px;
+    width: 95px;
   }
 
   .alien{
-    height: 75px;
-    width: 75px;
+    height: 95px;
+    width: 95px;
   }
   
   .leftSide{
     display: flex;
-    margin-left: -95px;
+    margin-left: -200px;
   }
   
   .rightSide{
     display: flex;
-    margin-right: -100px;
+    margin-right: -200px;
   }
   
   .them{
@@ -344,8 +325,8 @@
   .buttons{
     display: flex;
     flex-direction: column;
-    margin-left: -125px;
-    margin-top: 100px;
+    margin-left: -250px;
+    margin-top: 25px;
   }
   
   .aboutMe{
@@ -382,8 +363,199 @@
   .bTN{
     display: flex;
   }
+
+
+
+
+
+
+
+
+}
+
+
+
+@media screen and (max-width: 800px){
+  .game{
+    width: 100px;
+  }
+
+  body{
+    display: grid;
+    background-image: url("https://hips.hearstapps.com/hmg-prod/images/panorama-milky-way-galaxy-with-stars-and-space-dust-royalty-free-image-1623176828.jpg?crop=0.99995xw:1xh;center,top&resize=1200:*");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: aliceblue;
+    justify-content: center;
+    font-family: cursive;
+    height: 680px;
+  }
+ 
+  .board{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 350px;
+    margin-left: -125%;
+  }
+
+  .text h1{
+      font-size: 30pt;
+      padding: 0 10px;
+      margin: 0 auto;
+      text-transform: uppercase;
+      color: #fff;
+      animation: header-one 2s linear infinite;
+    }
+  
+  .text p{
+    font-family: cursive;
+    font-size: 12pt;
+  }
+  
+  .assembly{
+    display: flex;
+    height: 65px;
+    width: 65px;
+  }
+
+  .alien{
+    height: 65px;
+    width: 65px;
+  }
+  
+  .leftSide{
+    display: flex;
+  }
+  
+  .rightSide{
+    display: flex;
+  }
+  
+  .them{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .lblAlienHull{
+    display: flex;
+    font-size: 12pt;
+  }
+  
+  .us{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 45px;
+  }
+  
+  .lblHumanHull{
+    display: flex;
+    font-size: 12pt;
+    margin-top: 100%;
+  }
+  
+  #shoot{
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 25px;
+    margin-left: -1%;
+    margin-top: 65%;
+    background-color: #fff;
+    border-radius: 20em;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: cursive;
+    transition: all 100ms linear;
+    color: #846ba9;
+    position: absolute;
+    box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  }
+  
+  #shoot::before {
+    content: "";
+    width: 75px;
+    height: 25px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+    animation: flash 100ms ease-in-out;
+    transform: scaleX(2) scaleY(2);
+  }
+  
+  #shoot:hover::before {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+  
+  
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    margin-left: -200px;
+    margin-top: 100px;
+  }
+  
+  .aboutMe{
+    display: flex;
+  }
+  
+  .aboutMe a{
+    display: flex;
+  
+    text-decoration: none;
+  }
+  
+  .me{
+    border-radius: 25px;
+  }
+  
+  .btn{
+    width: 75px;
+    height: 25px;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 20em;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: cursive;
+    transition: all 100ms linear;
+    color: #846ba9;
+    position: relative;
+    box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  .bTN{
+    display: flex;
+  }
   
 }
+
+
+
+
+
+
+
 
 
  #shoot:active {
