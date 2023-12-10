@@ -17,7 +17,11 @@
 }
 
 @media screen and (max-width: 3000px){
-  /* body{
+  .game{
+    width: 1400px;
+  }
+
+  body{
     display: grid;
     background-image: url("https://hips.hearstapps.com/hmg-prod/images/panorama-milky-way-galaxy-with-stars-and-space-dust-royalty-free-image-1623176828.jpg?crop=0.99995xw:1xh;center,top&resize=1200:*");
     background-repeat: no-repeat;
@@ -25,170 +29,171 @@
     color: aliceblue;
     justify-content: center;
     font-family: cursive;
-  } */
-
-  /* .text{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.board{
-  display: flex;
-  height: 600px;
-  width: 1200px;
-  justify-content: space-between;
-}
-
-.text h1{
-    font-size: 60px;
-    padding: 0 10px;
-    text-transform: uppercase;
-    color: #fff;
-    animation: zoomup 2s linear infinite;
-    animation-delay: calc(200ms * var(--i));
+    height: 680px;
+  }
+ 
+  .board{
+    display: flex;
+    justify-content: space-between;
   }
 
-.text p{
-  font-family: cursive;
-  font-size: 20pt;
+  .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    margin-left: 30%;
+    text-align: center;
+    width: 350px;
+  }
+
+  .text h1{
+      display: flex;
+      font-size: 45pt;
+      padding: 0 10px;
+      margin: 0 auto;
+      width: 800px;
+      text-transform: uppercase;
+      color: #fff;
+      animation: header-one 2s linear infinite;
+    }
+  
+  .text p{
+    font-family: cursive;
+    font-size: 15pt;
+    width: 800px;
+    margin-left: -40%;
+  }
+  
+  .assembly{
+    display: flex;
+    height: 100px;
+    width: 100px;
+  }
+
+  .alien{
+    height: 100px;
+    width: 100px;
+  }
+  
+  .leftSide{
+    display: flex;
+  }
+  
+  .rightSide{
+    display: flex;
+  }
+  
+  .them{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .lblAlienHull{
+    display: flex;
+    font-size: 12pt;
+  }
+  
+  .us{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 45px;
+  }
+  
+  .lblHumanHull{
+    display: flex;
+    font-size: 12pt;
+    margin-top: 100%;
+  }
+  
+  #shoot{
+    display: flex;
+    justify-content: center;
+    margin-left: 40%;
+    margin-top: 30%;
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 20em;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: cursive;
+    transition: all 100ms linear;
+    color: #846ba9;
+    position: absolute;
+    box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+
+  }
+  
+  #shoot::before {
+    content: "";
+    width: 75px;
+    height: 25px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all 500ms ease-in-out;
+    opacity: 0;
+    animation: flash 100ms ease-in-out;
+    transform: scaleX(2) scaleY(2);
+  }
+  
+  #shoot:hover::before {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+  
+  
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+  }
+  
+  .aboutMe{
+    display: flex;
+  }
+  
+  .aboutMe a{
+    display: flex;
+  
+    text-decoration: none;
+  }
+  
+  .me{
+    border-radius: 25px;
+  }
+  
+  .btn{
+    width: 100px;
+    height: 45px;
+    margin: 5px;
+    background-color: #fff;
+    border-radius: 20em;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: cursive;
+    transition: all 100ms linear;
+    color: #846ba9;
+    position: relative;
+    box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+  
+  .bTN{
+    display: flex;
+  }
+
 }
 
-.assembly{
-  display: flex;
-  height: 100px;
-  width: 100px;
-}
-
-.leftSide{
-  display: flex;
-}
-
-.rightSide{
-  display: flex;
-}
-
-.them{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100px;
-}
-
-.lblAlienHull{
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 300px;
-  margin-left: 50px;
-  font-size: 30pt;
-}
-
-.us{
-  display: flex;
-  height: 100%;
-  width: 100px;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 45px;
-}
-
-.lblHumanHull{
-  display: flex;
-  align-items:end;
-  justify-content: center;
-  height: 100%;
-  width: 300px;
-  font-size: 30pt;
-  margin-right: 45px;
-}
-
-#shoot{
-  width: 100px;
-  height: 45px;
-  align-self: flex-end;
-  background-color: #fff;
-  border-radius: 20em;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  font-family: cursive;
-  transition: all 100ms linear;
-  color: #846ba9;
-  position: relative;
-  box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
-  0 2px 4px -2px rgb(0 0 0 / 0.1);
-}
-
-#shoot:active {
-  box-shadow: inset 0 0 0 4px #442860;
-}
-
-#shoot::before {
-  content: "";
-  width: 100px;
-  height: 50px;
-  background-color: #fff;
-  position: absolute;
-  border-radius: inherit;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  transition: all 500ms ease-in-out;
-  opacity: 0;
-  animation: flash 100ms ease-in-out;
-  transform: scaleX(2) scaleY(2);
-}
-
-#shoot:hover::before {
-  opacity: 1;
-  transform: scaleX(1) scaleY(1);
-}
-
-
-.buttons{
-  display: flex;
-  flex-direction: column;
-  margin-left: -150px;
-}
-
-.aboutMe{
-  display: flex;
-}
-
-.aboutMe a{
-  display: flex;
-
-  text-decoration: none;
-}
-
-.me{
-  border-radius: 25px;
-}
-
-.btn{
-  width: 110px;
-  height: 45px;
-  margin: 5px;
-  background-color: #fff;
-  border-radius: 20em;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  font-family: cursive;
-  transition: all 100ms linear;
-  color: #846ba9;
-  position: relative;
-  box-shadow: inset 0 4px 6px -1px rgb(0 0 0 / 0.1), 
-  0 2px 4px -2px rgb(0 0 0 / 0.1); 
-}
-
-.bTN{
-  display: flex;
-}*/
-
-}
 
 
 
@@ -363,14 +368,6 @@
   .bTN{
     display: flex;
   }
-
-
-
-
-
-
-
-
 }
 
 
@@ -547,13 +544,7 @@
   .bTN{
     display: flex;
   }
-  
 }
-
-
-
-
-
 
 
 
