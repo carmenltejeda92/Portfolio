@@ -1,29 +1,10 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { TweenMax } from "gsap/all";
 
 
 function About() {
 
     const nav = useNavigate()
-
-    const paragraph = document.querySelector('.paragraph')
-    const separated = paragraph.split(" ")
-
-    function rando(min, max){
-      return Math.floor(Math.random(max-min) + min)
-    }
-
-    separated.forEach((e)=>{
-
-    })
-
-
-
-
-
-
-
    
   return (
     <div className='aboutME'>
@@ -39,7 +20,7 @@ function About() {
             deploy images and software following all company standards. Adept at executing service level agreements (SLA) in a 
             timely manner.
           </p>
-          <a href="https://www.linkedin.com/in/carmenltejeda91/"><h2>Look at my LinkedIn</h2></a>
+          <a className='link' href="https://www.linkedin.com/in/carmenltejeda91/"><h2>Look at my LinkedIn</h2></a>
         </div>
       </div>
       <div>
