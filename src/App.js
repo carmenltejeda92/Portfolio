@@ -47,8 +47,6 @@ function App() {
         {/* <Route path="/baseball" element={<Baseball />} /> */}
         <Route path="/about-me" element={<About />} />
       </Routes>
-      {/* {song?<Display info={song}/>: null} */}
-
     </div>
   );
 }

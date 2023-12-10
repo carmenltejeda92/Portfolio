@@ -25,6 +25,7 @@ function Songs(props) {
             <form onSubmit={handleSubmit}>
             <input className='search' name="searchterm" type="text" placeholder="Search Song"
               onChange={handleChange} value={formData.searchterm}></input>
+              <label>{props.artists}</label>
             </form>
         </div>
         <button className='btn' onClick={()=>nav('/')}>Home</button>
