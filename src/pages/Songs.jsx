@@ -1,11 +1,14 @@
 import React from 'react'
-import {useState, createContext} from 'react'
+import {useState, useContext} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AppContext } from '../App'
+import { Context } from '../App'
+
 
 function Songs(props) {
     const nav = useNavigate()
+    const {song} = useContext(Context)
     const[formData, setFormData] = useState({searchterm: ""})
+
 
     const handleChange = (e) =>{
         setFormData({...formData, [e.target.name]: e.target.value})
@@ -21,14 +24,16 @@ function Songs(props) {
   return (
 
     <div className='form'>
-        <div className=''>
+        <h1>What's your favorite movie??</h1>
+        <div>
             <div className='result'></div>
             <form onSubmit={handleSubmit}>
             <input className='search' name="searchterm" type="text" placeholder="Search Song"
               onChange={handleChange} value={formData.searchterm}></input>
-              <label>{props.artists}</label>
             </form>
         </div>
+        {/* <p>{song.Search[0].Title}</p>
+        <img src={song.Search[0].Poster}></img> */}
         <button className='btn' onClick={()=>nav('/')}>Home</button>
     </div>
   )

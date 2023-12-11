@@ -1,10 +1,9 @@
-import {useState, useEffect, createContext} from 'react'
+import {useState, useEffect, useContext, createContext} from 'react'
 import { Routes, Route} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
 import Songs from './pages/Songs';
-import Display from './components/Display';
 
 export const Context = createContext()
 
@@ -38,14 +37,15 @@ function App() {
   
  
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/songs" element={<Songs handleSong={getSong} songSearch={song} />} />
-        {/* <Route path="/baseball" element={<Baseball />} /> */}
-        <Route path="/about-me" element={<About />} />
-      </Routes>
-    </div>
+    <Context.Provider value={{song}}>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/songs" element={<Songs handleSong={getSong} />} />
+          <Route path="/about-me" element={<About />} />
+        </Routes>
+      </div>
+    </Context.Provider>
   );
 }
 
