@@ -26,6 +26,10 @@ function Songs(props) {
 
     <div className='form'>
         <h1>What's your favorite movie??</h1>
+        <div className='results'>
+          <p>{song.Search[0].Title}</p>
+          <img className='resultImg' src={song.Search[0].Poster} />
+        </div>
         <h3>Here are some of mine</h3>
         <div className='movieList'>
           <img className='movie' src="https://humanehollywood.org/app/uploads/2020/02/tCgBOpglqgg478AIy9wYfZ7choY-235x353-c-default.jpg" />
@@ -40,8 +44,6 @@ function Songs(props) {
             onChange={handleChange} value={formData.searchterm}></input>
           </form>
         </div>
-        {/* <p>{song.Search[0].Title}</p>
-        <img src={song.Search[0].Poster}></img> */}
         <button className='goHome' onClick={()=>nav('/')}>Home</button>
     </div>
   )

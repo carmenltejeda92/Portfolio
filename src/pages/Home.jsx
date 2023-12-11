@@ -35,69 +35,62 @@ function Home() {
     
 
     function shootThem(){
+        const alienHull = document.querySelector('.lblAlienHull')
+        const humanHull = document.querySelector('.lblHumanHull')
+        let rando = Math.random().toFixed(2)
+        let humanShips = ships
+        let alienShips = ships
 
 
+        if(pOneTurn == true){
+            pOneTurn = false
+            if(rando > Ships[0].accuracy){
+                if(Ships[1].hull === 0){
+                    setShip(alienShips--)
+                    alienHull.textContent = ('One of our ships were destroyed! We have ' + alienShips + ' ships left!')
+                    humanHull.textContent = 'We hit them!'
+                    Ships[1].hull = 15
+                }else{
+                    Ships[1].hull -= 5
+                    alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
+                    humanHull.textContent = 'We hit them!'
+                    setShip(alienShips--)
+                }
+            }else if(rando === Ships[0].accuracy){
+                setShip(alienShips--)
+                humanHull.textContent = 'Direct Hit!'
+                alienHull.textContent = ('One of our ships have been destroyed! ' + alienShips + ' left!')
+            }else if(rando < Ships[0].accuracy){
+                humanHull.textContent = 'Oh no, we missed! Aliens turn!'
+                alienHull.textContent = 'Our turn! Yay!'
+            }
 
+            if(alienShips === 0) humanHull.textContent ='All alien ships destroyed!! Earth wins!!'
+        } else if(pOneTurn == false){
+            pOneTurn = true
+            if(rando > Ships[1].accuracy){
+                if(Ships[0].hull === 0){
+                    setShip(humanShips--)
+                    humanHull.textContent = ('One of our ships were destroyed! We have ' + humanShips + ' ships left!')
+                    alienHull.textContent = 'We hit them!'
+                    Ships[0].hull = 20
+                }else{
+                    Ships[0].hull -= 5
+                    humanHull.textContent = ('We were hit! Our ships health is now: ' + Ships[0].hull)
+                    alienHull.textContent = 'We hit them!'
+                    setShip(humanShips--)
+                }
+            }else if(rando === Ships[1].accuracy){
+                alienHull.textContent = 'Direct Hit!'
+                setShip(humanShips--)
+            }else if(rando < Ships[1].accuracy){
+                alienHull.textContent = 'Oh no, we missed! Humans turn!'
+                humanHull.textContent = 'Our turn! Yay!'
+            }
 
+            if(humanShips === 0) alienHull.textContent ='We defeated the humans! Invade!!'
 
-
-
-        // const alienHull = document.querySelector('.lblAlienHull')
-        // const humanHull = document.querySelector('.lblHumanHull')
-        // let rando = Math.random().toFixed(2)
-        // let humanShips = ships
-        // let alienShips = ships
-
-
-        // if(pOneTurn == true){
-        //     pOneTurn = false
-        //     if(rando > Ships[0].accuracy){
-        //         if(Ships[1].hull === 0){
-        //             setShip(alienShips--)
-        //             alienHull.textContent = ('One of our ships were destroyed! We have ' + alienShips + ' ships left!')
-        //             humanHull.textContent = 'We hit them!'
-        //             Ships[1].hull = 15
-        //         }else{
-        //             Ships[1].hull -= 5
-        //             alienHull.textContent = ('We were hit! Our ships health is now: ' + Ships[1].hull)
-        //             humanHull.textContent = 'We hit them!'
-        //             setShip(alienShips--)
-        //         }
-        //     }else if(rando === Ships[0].accuracy){
-        //         setShip(alienShips--)
-        //         humanHull.textContent = 'Direct Hit!'
-        //         alienHull.textContent = ('One of our ships have been destroyed! ' + alienShips + ' left!')
-        //     }else if(rando < Ships[0].accuracy){
-        //         humanHull.textContent = 'Oh no, we missed! Aliens turn!'
-        //         alienHull.textContent = 'Our turn! Yay!'
-        //     }
-
-        //     if(alienShips === 0) humanHull.textContent ='All alien ships destroyed!! Earth wins!!'
-        // } else if(pOneTurn == false){
-        //     pOneTurn = true
-        //     if(rando > Ships[1].accuracy){
-        //         if(Ships[0].hull === 0){
-        //             setShip(humanShips--)
-        //             humanHull.textContent = ('One of our ships were destroyed! We have ' + humanShips + ' ships left!')
-        //             alienHull.textContent = 'We hit them!'
-        //             Ships[0].hull = 20
-        //         }else{
-        //             Ships[0].hull -= 5
-        //             humanHull.textContent = ('We were hit! Our ships health is now: ' + Ships[0].hull)
-        //             alienHull.textContent = 'We hit them!'
-        //             setShip(humanShips--)
-        //         }
-        //     }else if(rando === Ships[1].accuracy){
-        //         alienHull.textContent = 'Direct Hit!'
-        //         setShip(humanShips--)
-        //     }else if(rando < Ships[1].accuracy){
-        //         alienHull.textContent = 'Oh no, we missed! Humans turn!'
-        //         humanHull.textContent = 'Our turn! Yay!'
-        //     }
-
-        //     if(humanShips === 0) alienHull.textContent ='We defeated the humans! Invade!!'
-
-    //     }
+        }
     }
 
 
